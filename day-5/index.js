@@ -48,7 +48,7 @@ function greatest(num1, num2) {
 
 console.log(`${answer} is greatest`);
 
-// task 4:
+// task 4: Write a function expression to concatenate two strings and return the result.
 
 let firstName = "Koushik";
 let lastName = "Chowdhury";
