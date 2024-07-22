@@ -28,7 +28,7 @@ function square(n) {
 
 console.log(`Square of ${n} is ${res}`);
 
-console.log(`-------------- Activity 2 --------------\n`);
+console.log(`\n-------------- Activity 2 --------------\n`);
 
 // Function Expression
 
@@ -53,10 +53,57 @@ console.log(`${answer} is greatest`);
 let firstName = "Koushik";
 let lastName = "Chowdhury";
 
+function concat(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
 let fullName = concat(firstName, lastName);
 
-function concat(firstName, lastName){
-    return `${firstName} ${lastName};`
+console.log(fullName);
+
+console.log(`\n-------------- Activity 3 --------------\n`);
+
+// task 5: Write an arrow function to calculate the sum of two nubers and return the result.
+
+arrowFunAdd = (num1, num2) => {
+  return num1 + num2;
+};
+console.log(`Using arrow function ${arrowFunAdd(num1, num2)}`);
+
+// task 6: write an arrow function to check if a string contains a specific character and return a boolean.
+
+let myName = "Koushik Chowdhury";
+let target = "b";
+checkString = (myName, target) => {
+  if (myName.includes(target)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(checkString(myName, target));
+
+console.log(`\n-------------- Activity 4 --------------\n`);
+
+// task 7: Write a function that takes two parameters and returns their product. Provide a default value for the second parameter.
+
+let mul1 = 10;
+let mul2 = 10;
+
+defaultParam = (mul1, mul2 = 5) => {
+  return mul1 * mul2;
 }
 
-console.log(fullName);
+// little bug. if we don't pass anything then it will print undefined
+console.log(`Product of ${mul1} & ${mul2} is ${defaultParam(mul1, mul2)}`);
+
+// task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
+
+let personName = "Koushik Chowdhury";
+let age;
+
+person = (personName, age = 18)  => {
+  return `Hello, ${personName} Your age is ${age}.`
+}
+
+console.log(person(personName, age));
