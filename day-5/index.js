@@ -91,19 +91,19 @@ let mul1 = 10;
 let mul2 = 10;
 
 defaultParam = (mul1, mul2 = 5) => {
-  return mul1 * mul2;
-}
+  return `Product of ${mul1} & ${mul2} is ${mul1 * mul2}`;
+};
 
+console.log(`${defaultParam(6, 12)}`);
 // little bug. if we don't pass anything then it will print undefined
-console.log(`Product of ${mul1} & ${mul2} is ${defaultParam(mul1, mul2)}`);
 
 // task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
 
 let personName = "Koushik Chowdhury";
 let age;
 
-person = (personName, age = 18)  => {
-  return `Hello, ${personName} Your age is ${age}.`
-}
+person = (personName, age = 18) => {
+  return `Hello, ${personName} Your age is ${age}.`;
+};
 
 console.log(person(personName, age));
