@@ -95,7 +95,7 @@ defaultParam = (mul1, mul2 = 5) => {
 };
 
 console.log(`${defaultParam(6, 12)}`);
-// little bug. if we don't pass anything then it will print undefined
+// little bug. if we don't pass anything then it will print undefined || SOLVED
 
 // task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
 
