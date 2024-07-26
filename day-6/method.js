@@ -10,6 +10,18 @@ const array = new Array(1, 2, 3);
 array.push(6, 9);
 console.log(array);
 
+// task 4: pop method
 // popping
+
 array.pop();
 console.log(array);
+
+// task 5: shift
+
+array.shift();
+console.log(`Shift array ${array}`);
+
+// task 6: unshift
+
+array.unshift(5);
+console.log(`unshift - ${array}`);
