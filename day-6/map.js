@@ -49,3 +49,9 @@ for (let i = 0; i < arrayNum.length; i += 1) {
   console.log(arrayNum[i]);
 }
 
+// task 11: Use the forEach method to iterate over the array and log each element to the console.
+
+const values = [5, 4, 3, 2, 1];
+
+values.forEach((logData) => console.log(`values are - ${logData}`));
+
