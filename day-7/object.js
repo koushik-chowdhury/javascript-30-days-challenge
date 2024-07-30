@@ -81,7 +81,7 @@ console.log(`---------Activity 5--------`);
 // task 8: Use a for..in loop to iterate over the properties of the book object and log each property and its value.
 
 for (const key in techBook) {
-  if (techBook.hasOwnProperty(key)) {
-    console.log(`${key} :  ${techBook[key].writer}`);
+  if (techBook.hasOwnProperty(key) && key === "writer") {
+    console.log(`${key} :  ${techBook[key]}`);
   }
 }
