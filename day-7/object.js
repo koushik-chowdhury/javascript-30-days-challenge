@@ -85,3 +85,9 @@ for (const key in techBook) {
     console.log(`${key} :  ${techBook[key]}`);
   }
 }
+
+// task 9: use a Object.keys and object.values methods to log all the keys and values of the book object.
+
+console.log(Object.keys(techBook));
+console.log(Object.values(techBook));
+
