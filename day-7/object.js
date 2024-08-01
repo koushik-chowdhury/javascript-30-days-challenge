@@ -33,7 +33,7 @@ function updateYear(newYear) {
 }
 */
 updateYear = (newYear) => (book.year = newYear);
-updateYear(205);
+updateYear(206);
 console.log(book);
 
 console.log(`---------Activity 3--------`);
