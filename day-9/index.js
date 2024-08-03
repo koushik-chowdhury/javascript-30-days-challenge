@@ -1,4 +1,11 @@
-document.getElementById("text").innerHTML = "Web Developer";
-const x = document.getElementsByClassName("container")[0];
+function changeHtmlContent() {
+  document.getElementById("text").innerHTML = "web Developer";
+}
 
-x.style.backgroundColor = "blue";
+function changeBgColor() {
+  document.getElementsByClassName("container")[0].style.backgroundColor =
+    "yellow";
+}
+
+changeHtmlContent();
+changeBgColor();
