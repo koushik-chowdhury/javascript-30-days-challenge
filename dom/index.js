@@ -7,6 +7,7 @@ function colorChange() {
   const rand = Math.floor(Math.random() * (max - min + 1)) + min;
   Title.style.backgroundColor = colors[rand];
   Title.style.transition = "0.5s all"
+  Title.style.color = "black"
 }
 
 setInterval(colorChange, 1000);
