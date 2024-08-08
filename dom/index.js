@@ -12,4 +12,4 @@ function colorChange() {
   Title.style.transition = "0.6s all";
   Title.style.color = "black";
 }
-setInterval(colorChange, 1000);
+setInterval(colorChange, 2000);
