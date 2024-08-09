@@ -1,3 +1,5 @@
+
+
 // DOM MANIPULATION
 // Activity 1: Selecting and Manipulating Elements
 
@@ -39,4 +41,11 @@ if (del.hasChildNodes()) {
   } else {
     alert("no element");
   }
-  
+
+// Activity 4: Modifying Attributes and Classes
+// tas 7: Select an HTML element and change one of its attribute
+
+document.getElementById("profileImg").setAttribute("style", "border: 2px solid white")
+
+// task 8: Add and remove a CSS class to/from an HTML element. 
+document.querySelector(".yellow").setAttribute("class", "blue")
