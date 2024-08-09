@@ -1,5 +1,3 @@
-
-
 // DOM MANIPULATION
 // Activity 1: Selecting and Manipulating Elements
 
@@ -35,17 +33,36 @@ if (del.hasChildNodes()) {
   alert("no element");
 }
 
-// task 6: delete last child 
+// task 6: delete last child
 if (del.hasChildNodes()) {
-    del.removeChild(del.lastChild);
-  } else {
-    alert("no element");
-  }
+  del.removeChild(del.lastChild);
+} else {
+  alert("no element");
+}
 
 // Activity 4: Modifying Attributes and Classes
 // tas 7: Select an HTML element and change one of its attribute
 
-document.getElementById("profileImg").setAttribute("style", "border: 2px solid white")
+document
+  .getElementById("profileImg")
+  .setAttribute("style", "border: 2px solid white");
 
-// task 8: Add and remove a CSS class to/from an HTML element. 
-document.querySelector(".yellow").setAttribute("class", "blue")
+// task 8: Add and remove a CSS class to/from an HTML element.
+document.querySelector(".yellow").setAttribute("class", "blue");
+
+// Activity 5:
+
+const x = document
+  .getElementById("title")
+  .addEventListener("mouseover", mouseOver);
+const y = document
+  .getElementById("title")
+  .addEventListener("mouseout", mouseOut);
+
+function mouseOver() {
+  this.style.color = "blue";
+}
+function mouseOut() {
+    this.style.color = "";
+  }
+  
