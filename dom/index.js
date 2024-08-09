@@ -1,15 +1,42 @@
-function getElement() {
-  const Title = document.getElementById("title");
-  const colors = ["#FF0000", "blue", "yellow", "white", "violet", "grey"];
-  return [Title, colors];
+// DOM MANIPULATION
+// Activity 1: Selecting and Manipulating Elements
+
+// Select an HTML element by its ID and change its text content.
+document.getElementById("title").innerHTML = "Dom Manipulation";
+
+// select an HTML element by its class and change its background color
+document.getElementsByClassName("container")[0].style.backgroundColor = "Red";
+
+// Activity 2: Creating and Appending Elements
+
+// task 3: Create a new div element with some text and appent it to the body.
+
+const body = document.querySelector("body");
+const div = document.createElement("div");
+div.textContent = "This is a div, created using js";
+body.appendChild(div);
+
+// task 4: Create a new li element and add it to and esisting ul list.
+
+const node = document.querySelector(".list");
+const li = document.createElement("li");
+li.textContent = "This is some data that will be appended";
+node.appendChild(li);
+
+// Activity 3: Removing Elements
+// task 5: Select an HTML element and remove it from the DOM.
+
+const del = document.querySelector(".list");
+if (del.hasChildNodes()) {
+  del.removeChild(del.children[0]);
+} else {
+  alert("no element");
 }
-function colorChange() {
-  const [Title, colors] = getElement();
-  const max = 5;
-  const min = 0;
-  const rand = Math.floor(Math.random() * (max - min + 1)) + min;
-  Title.style.backgroundColor = colors[rand];
-  Title.style.transition = "0.6s all";
-  Title.style.color = "black";
-}
-setInterval(colorChange, 2000);
+
+// task 6: delete last child 
+if (del.hasChildNodes()) {
+    del.removeChild(del.lastChild);
+  } else {
+    alert("no element");
+  }
+  
