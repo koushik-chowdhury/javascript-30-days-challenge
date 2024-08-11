@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+</head>
+<body>
+    <h1 id="title">Hover over me!</h1>
+    <button id="btn">Change Background Color</button>
+    <input type="color" id="colorPicker">
+    <div id="divs" style="width: 200px; height: 200px; border: 1px solid black;"></div>
+
+    <script>
+        function getElement() {
+            document.getElementById("title").addEventListener("mouseover", mouseOver);
+            document.getElementById("title").addEventListener("mouseout", mouseOut);
+            document.getElementById("btn").addEventListener("click", changeColor);
+            document.getElementById("colorPicker").addEventListener("input", changeColor);
+        }
+        getElement();
+
+        function mouseOver() {
+            this.style.color = "blue";
+        }
+
+        function mouseOut() {
+            this.style.color = "";
+        }
+
+        function changeColor() {
+            const divs = document.getElementById("divs");
+            const colorPicker = document.getElementById("colorPicker");
+            divs.style.backgroundColor = colorPicker.value;
+        }
+    </script>
+</body>
+</html>

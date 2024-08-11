@@ -48,21 +48,35 @@ document
   .setAttribute("style", "border: 2px solid white");
 
 // task 8: Add and remove a CSS class to/from an HTML element.
-document.querySelector(".yellow").setAttribute("class", "blue");
+const divs = document.querySelector(".yellow");
+divs.setAttribute("class", "blue");
 
 // Activity 5:
 
-const x = document
-  .getElementById("title")
-  .addEventListener("mouseover", mouseOver);
-const y = document
-  .getElementById("title")
-  .addEventListener("mouseout", mouseOut);
+function getElement() {
+  document.getElementById("title").addEventListener("mouseover", mouseOver);
+  document.getElementById("title").addEventListener("mouseout", mouseOut);
+  document.getElementById("btn").addEventListener("click", changeColor);
+  document.getElementById("Color").addEventListener("input", resetColor);
 
+}
+getElement();
 function mouseOver() {
   this.style.color = "blue";
 }
 function mouseOut() {
-    this.style.color = "";
+  this.style.color = "";
+}
+
+function changeColor() {
+  if (divs.style.backgroundColor === "green") {
+    divs.style.backgroundColor = ""; // Reset to default color
+  } else {
+    divs.style.backgroundColor = "green"; // Set to green
   }
-  
+}
+
+function resetColor(){
+ const colorValue = document.getElementById("Color");
+ divs.style.backgroundColor = colorValue.value;
+}
