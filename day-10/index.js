@@ -5,7 +5,7 @@ function getElement() {
   const getText = document.getElementById("getText");
   const writeText = document.getElementById("downWrite");
   const writeTextUp = document.getElementById("upWrite");
-  return [container, dbl, hover, getText,  writeText, writeTextUp];
+  return [container, dbl, hover, getText, writeText, writeTextUp];
 }
 const [container, dbl, hover, getText, writeText, writeTextUp] = getElement();
 
@@ -49,14 +49,17 @@ function hoverReset() {
   hover.style.backgroundColor = "";
 }
 
-// Task 5: Add a keydown event listener to an input field that logs the key pressed to the console. 
-function keydown(){
+// Task 5: Add a keydown event listener to an input field that logs the key pressed to the console.
+function keydown() {
   writeText.innerHTML = `Keydown event : ${getText.value}`;
 }
 
 // Task 6: Add a keyup event listener to an input field that displays the current value in a paragraph
-function keyup(){
+function keyup() {
   writeTextUp.innerHTML = `KeyUp event: ${getText.value}`;
 }
 
+// [
 // Task 7: Add a change event listener to a select dropdown that displays the selected value in a paragraph
+// PENDING TASK ]
+
