@@ -5,21 +5,24 @@ function getElement() {
   const getText = document.getElementById("getText");
   const writeText = document.getElementById("downWrite");
   const writeTextUp = document.getElementById("upWrite");
-  return [container, dbl, hover, getText, writeText, writeTextUp];
+  const colors = document.getElementById("colors");
+  return [container, dbl, hover, getText, writeText, writeTextUp, colors];
 }
-const [container, dbl, hover, getText, writeText, writeTextUp] = getElement();
+const [container, dbl, hover, getText, writeText, writeTextUp, colors] =
+  getElement();
 
-function getEvent(dbl, hover, getText) {
+function getEvent(dbl, hover, getText, colors) {
   document.getElementById("btn").addEventListener("click", changeBgColor);
   dbl.addEventListener("dblclick", doubleFun);
   hover.addEventListener("mouseover", hoverBgChange);
   hover.addEventListener("mouseout", hoverReset);
   getText.addEventListener("keydown", keydown);
   getText.addEventListener("keyup", keyup);
-  return [dbl, hover, getText];
+  colors.addEventListener("change", boxBgChange);
+  return [dbl, hover, getText, colors];
 }
 
-getEvent(dbl, hover, getText); // got stuck here.
+getEvent(dbl, hover, getText, colors); // got stuck here.
 
 // Task 1: Add a click event listener to a button that changes the text content of a paragraph
 function changeBgColor() {
@@ -59,7 +62,16 @@ function keyup() {
   writeTextUp.innerHTML = `KeyUp event: ${getText.value}`;
 }
 
-// [
-// Task 7: Add a change event listener to a select dropdown that displays the selected value in a paragraph
-// PENDING TASK ]
+// [ TASK 7 IS PENDING]
+// Task 8: Add a change event listener to a select dropdown that displays the selected value in a paragraph
 
+function boxBgChange() {
+  // basic way
+  const bg = document.querySelector(".box");
+  if (colors.value == "default") {
+    bg.style.backgroundColor = "";
+  } else {
+    bg.style.backgroundColor = colors.value;
+  }
+  console.log(colors.value);
+}

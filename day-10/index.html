@@ -13,15 +13,15 @@
       #btn {
         cursor: pointer;
       }
-      .dblclick{
+      .dblclick {
         height: 150px;
         width: 150px;
         border: 2px solid blue;
       }
-      .hover{
+      .hover {
         height: 150px;
         width: 150px;
-        border: 2px solid green
+        border: 2px solid green;
       }
     </style>
   </head>
@@ -34,10 +34,22 @@
     </div>
     <button id="btn">Change color</button>
     <div class="hover">Hover me to change color</div>
-      <input type="text" name="" id="getText">
-      <p>Key Down event:</p>
-      <p id="downWrite">Keydown event :</p>
-      <p id = "upWrite">KeyUp event :</p>
-    <script src="index.js"></script>
+    <input type="text" name="" id="getText" />
+    <p>Key Down event:</p>
+    <p id="downWrite">Keydown event :</p>
+    <p id="upWrite">KeyUp event :</p>
+    <div class="option">
+      <label for="colors">Choose a color</label>
+      <select name="colors" id="colors">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="default">Default</option>
+      </select>
+      <p id="selectedColors">You have selec : </p>
+      <div class="box container">
+          <p>i am a box. select color from dropdown to change my bg color.</p>
+      </div>
+    </div>
   </body>
+  <script src="index.js"></script>
 </html>
