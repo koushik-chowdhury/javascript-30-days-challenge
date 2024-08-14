@@ -23,6 +23,19 @@
         width: 150px;
         border: 2px solid green;
       }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #f0f0f0;
+        cursor: pointer;
+      }
+      li:hover {
+        background-color: #ddd;
+      }
     </style>
   </head>
   <body>
@@ -45,11 +58,18 @@
         <option value="blue">Blue</option>
         <option value="default">Default</option>
       </select>
-      <p id="selectedColors">You have selec : </p>
+      <p id="selectedColors">You have selec :</p>
       <div class="box container">
-          <p>i am a box. select color from dropdown to change my bg color.</p>
+        <p>i am a box. select color from dropdown to change my bg color.</p>
       </div>
     </div>
+    <ul id="myList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+    <button id="addItem">Add Item</button>
   </body>
   <script src="index.js"></script>
 </html>

@@ -6,12 +6,22 @@ function getElement() {
   const writeText = document.getElementById("downWrite");
   const writeTextUp = document.getElementById("upWrite");
   const colors = document.getElementById("colors");
-  return [container, dbl, hover, getText, writeText, writeTextUp, colors];
+  const myList = document.getElementById("myList");
+  return [
+    container,
+    dbl,
+    hover,
+    getText,
+    writeText,
+    writeTextUp,
+    colors,
+    myList,
+  ];
 }
-const [container, dbl, hover, getText, writeText, writeTextUp, colors] =
+const [container, dbl, hover, getText, writeText, writeTextUp, colors, myList] =
   getElement();
 
-function getEvent(dbl, hover, getText, colors) {
+function getEvent(dbl, hover, getText, colors, myList) {
   document.getElementById("btn").addEventListener("click", changeBgColor);
   dbl.addEventListener("dblclick", doubleFun);
   hover.addEventListener("mouseover", hoverBgChange);
@@ -19,10 +29,11 @@ function getEvent(dbl, hover, getText, colors) {
   getText.addEventListener("keydown", keydown);
   getText.addEventListener("keyup", keyup);
   colors.addEventListener("change", boxBgChange);
-  return [dbl, hover, getText, colors];
+  myList.addEventListener("click", eventDelegant);
+  return [dbl, hover, getText, colors, myList];
 }
 
-getEvent(dbl, hover, getText, colors); // got stuck here.
+getEvent(dbl, hover, getText, colors, myList); // got stuck here.
 
 // Task 1: Add a click event listener to a button that changes the text content of a paragraph
 function changeBgColor() {
@@ -75,3 +86,15 @@ function boxBgChange() {
   }
   console.log(colors.value);
 }
+
+
+function eventDelegant(){
+    console.log(`${event.target.textContent} clicked`);
+}
+
+const add = document.getElementById("addItem");
+add.addEventListener("click", (event) => {
+  const newItem = document.createElement("li");
+  newItem.textContent = `Item ${myList.children.length + 1}`;
+  myList.appendChild(newItem);
+});
