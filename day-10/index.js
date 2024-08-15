@@ -89,7 +89,7 @@ function boxBgChange() {
 
 
 function eventDelegant(){
-    console.log(`${event.target.textContent} clicked`);
+    alert(`${event.target.textContent} clicked`);
 }
 
 const add = document.getElementById("addItem");
@@ -97,4 +97,9 @@ add.addEventListener("click", (event) => {
   const newItem = document.createElement("li");
   newItem.textContent = `Item ${myList.children.length + 1}`;
   myList.appendChild(newItem);
+  
+  // Use setTimeout with a delay of 0 to allow the DOM to update before showing the alert
+  setTimeout(() => {
+    alert(`Item ${myList.children.length} added`);
+  },200);
 });
