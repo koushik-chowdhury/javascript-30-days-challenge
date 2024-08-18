@@ -87,9 +87,11 @@ function boxBgChange() {
   console.log(colors.value);
 }
 
-
-function eventDelegant(){
-    alert(`${event.target.textContent} clicked`);
+function eventDelegant() {
+  // alert(`${event.target.textContent} clicked`);
+  if (event.target && event.target.nodeName === 'LI') {
+    console.log(event.target.textContent);
+}
 }
 
 const add = document.getElementById("addItem");
@@ -97,9 +99,53 @@ add.addEventListener("click", (event) => {
   const newItem = document.createElement("li");
   newItem.textContent = `Item ${myList.children.length + 1}`;
   myList.appendChild(newItem);
-  
+
   // Use setTimeout with a delay of 0 to allow the DOM to update before showing the alert
-  setTimeout(() => {
-    alert(`Item ${myList.children.length} added`);
-  },200);
+  // setTimeout(() => {
+  //   alert(`Item ${myList.children.length} added`);
+  // }, 100);
 });
+
+// ----------------
+
+const newArray = []; // Declare the array outside the event listener
+
+document.getElementById("push").addEventListener("click", () => {
+  const array = document.getElementById("array");
+  newArray.push(array.value);
+  console.log(newArray);
+});
+
+function display() {
+  document.getElementById("show").addEventListener("click", () => {
+    const display = document.getElementById("display");
+    display.textContent = newArray.join(" | ");
+  });
+}
+display();
+
+const eArray = document.getElementById("eArray");
+document.getElementById("even").addEventListener("click", displayEven);
+function displayEven() {
+  let evenArray = [];
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] % 2 === 0) {
+      evenArray.push(newArray[i]);
+      eArray.textContent = evenArray;
+    }
+    eArray.textContent = evenArray.join(" | ");
+  }
+}
+
+// const eArray = document.getElementById("eArray");
+// document.getElementById("even").addEventListener("click", displayEven);
+
+// function displayEven() {
+//   let evenArray = []; // Initialize evenArray as an empty array
+//   for (let i = 0; i < newArray.length; i++) { // Use < instead of <=
+//     if (newArray[i] % 2 === 0) { // Check if the element is even
+//       evenArray.push(newArray[i]); // Push the even element to evenArray
+//     }
+//   }
+//   eArray.textContent = evenArray.join(', '); // Display the evenArray as a comma-separated string
+// }
