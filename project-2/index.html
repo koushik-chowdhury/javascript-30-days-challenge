@@ -13,7 +13,7 @@
         </div>
         <div class="input-fields">
             <!-- <label for="arrayElements">Array Elements:</label> -->
-            <input type="text" id="arrayElements" placeholder="Enter array elements here.." autocomplete="off" inputmode="numeric">
+            <input type="text" id="arrayElements" placeholder="Enter array elements here.." autocomplete="off" inputmode="numeric" required>
             <button type="submit" id="pushArray" class="button-1">Push Element</button>
         </div>
         <div class="display">
@@ -22,6 +22,14 @@
             <button type="submit" id="oddArray" class="button-29">Odd Array</button>
         </div>
     </div>
+    <div class="displayArray" id="displayArrayShow">
+        <p>Array ELements</p>
+        <div class="items">
+            <ol id="displayArray">
+            </ol>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
     
 </body>
 <script src="index.js"></script>

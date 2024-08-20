@@ -15,7 +15,7 @@
 }
 
 .title {
-  display: flex; 
+  display: flex;
   justify-content: center; /* Center content horizontally inside title */
   align-items: center; /* Center content vertically inside title */
   margin-bottom: 10px;
@@ -34,9 +34,8 @@
   padding: 5px;
   border-radius: 10px;
 }
-.input-fields input::placeholder{
-    font-size: 16px;
-    
+.input-fields input::placeholder {
+  font-size: 16px;
 }
 
 .input-fields .button-1 {
@@ -125,4 +124,84 @@
 .button-29:active {
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+/* card for displaying the array */
+
+.displayArray {
+  width: 190px;
+  height: auto;
+  margin: 20px;
+  background-color: #011522;
+  border-radius: 8px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  /* justify-content: center; */
+  padding: 10px;
+  /* align-items: center; */
+  display: none;
+}
+
+.items{
+  padding: 10px;
+}
+.items li{
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c35;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+
+/* Toast Notification Styles */
+.toast {
+  position: fixed;
+  top: -100px; /* Hide the toast initially */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e74c3c; /* Red color for error */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.toast-display {
+  position: fixed;
+  top: -100px; /* Hide the toast initially */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e74c3c; /* Red color for error */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+/* Toast visible state */
+.toast.show {
+  top: 20px;
+  opacity: 1;
+}
+.toast-display.show {
+  top: 20px;
+  opacity: 1;
+}
+
+.toast.error1 {
+  background-color: red;
+}
+
+.toast.error2 {
+  background-color: Green;
 }
