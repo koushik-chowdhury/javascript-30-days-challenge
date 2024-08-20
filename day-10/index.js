@@ -136,16 +136,3 @@ function displayEven() {
     eArray.textContent = evenArray.join(" | ");
   }
 }
-
-// const eArray = document.getElementById("eArray");
-// document.getElementById("even").addEventListener("click", displayEven);
-
-// function displayEven() {
-//   let evenArray = []; // Initialize evenArray as an empty array
-//   for (let i = 0; i < newArray.length; i++) { // Use < instead of <=
-//     if (newArray[i] % 2 === 0) { // Check if the element is even
-//       evenArray.push(newArray[i]); // Push the even element to evenArray
-//     }
-//   }
-//   eArray.textContent = evenArray.join(', '); // Display the evenArray as a comma-separated string
-// }
