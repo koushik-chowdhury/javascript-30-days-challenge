@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array Methods</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="title">
-            <h1>Array Methods</h1>
-        </div>
-        <div class="input-fields">
-            <!-- <label for="arrayElements">Array Elements:</label> -->
-            <input type="text" id="arrayElements" placeholder="Enter array elements here.." autocomplete="off" inputmode="numeric" required>
-            <button type="submit" id="pushArray" class="button-1">Push Element</button>
-        </div>
-        <div class="display">
-            <button type="submit" id="display" class="button-29">Display</button>
-            <button type="submit" id="evenArray" class="button-29">Even Array</button>
-            <button type="submit" id="oddArray" class="button-29">Odd Array</button>
-        </div>
+      <div class="title">
+        <h1>Array Methods</h1>
+      </div>
+      <div class="input-fields">
+        <!-- <label for="arrayElements">Array Elements:</label> -->
+        <input
+          type="text"
+          id="arrayElements"
+          placeholder="Enter array elements here.."
+          autocomplete="off"
+          inputmode="numeric"
+          required
+        />
+        <button type="submit" id="pushArray" class="button-1">
+          Push Element
+        </button>
+      </div>
+      <div class="display">
+        <button type="submit" id="display" class="button-29">Display</button>
+        <button type="submit" id="evenArray" class="button-29">Even Array</button>
+        <button type="submit" id="oddArray" class="button-29">Odd Array</button>
+      </div>
     </div>
-    <div class="displayArray" id="displayArrayShow">
+    <div class="wrap">
+      <div class="displayArray" id="displayArrayShow">
         <p>Array ELements</p>
         <div class="items">
-            <ol id="displayArray">
-            </ol>
+          <ol id="displayArray"></ol>
         </div>
+      </div>
+      <div class="evenArray" id="evenDisplay">
+        <p>Even Array</p>
+        <div class="items">
+          <ol id="evenArrayDisplay">
+          </ol>
+        </div>
+      </div>
     </div>
     <div id="toast" class="toast"></div>
-    
-</body>
-<script src="index.js"></script>
+  </body>
+  <script src="index.js"></script>
 </html>

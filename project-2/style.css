@@ -127,25 +127,29 @@
 }
 
 /* card for displaying the array */
+/* 
+.wrap {
+  display: flex;
+}
 
 .displayArray {
   width: 190px;
-  height: auto;
+  /* height: auto; 
   margin: 20px;
   background-color: #011522;
   border-radius: 8px;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
   color: #fff;
-  /* justify-content: center; */
   padding: 10px;
-  /* align-items: center; */
   display: none;
 }
 
 .items{
   padding: 10px;
+}
+.items ol{
+  display: flex;
+  flex-wrap: wrap;
 }
 .items li{
   display: flex;
@@ -153,10 +157,63 @@
   justify-content: center;
   align-items: center;
   background-color: #282c35;
-  margin: 5px;
-  padding: 5px;
+  margin: 6px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+.items li:hover{
+scale: 1.02;
+transition: 0.2s all;
+} */
+
+.wrap {
+  display: flex;
+  /*justify-content: center; /* Ensures space between child elements */
+  align-items: flex-start; /* Aligns children at the top */
 }
 
+.displayArray,
+.evenArray {
+  width: 190px; /* Width of the child elements */
+  margin: 20px; /* Margin around the child elements */
+  background-color: #011522; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding inside the elements */
+  display: none; /* Hide elements initially */
+  box-sizing: border-box;
+}
+
+.items {
+  padding: 10px; /* Padding inside the items container */
+}
+
+.items ol {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.items li {
+  display: flex;
+  list-style: none; /* Removes default list styling */
+  justify-content: center;
+  align-items: center;
+  background-color: #282c35;
+  margin: 6px; /* Space between list items */
+  padding: 10px; /* Padding inside list items */
+  border-radius: 5px; /* Rounded corners for list items */
+  cursor: pointer;
+  width: 40%; /* Width of list items */
+}
+
+.items li:hover {
+  transform: scale(1.02); /* Slightly enlarge the item on hover */
+  transition: 0.2s all; /* Smooth transition */
+}
 
 
 /* Toast Notification Styles */
@@ -204,4 +261,8 @@
 
 .toast.error2 {
   background-color: Green;
+}
+
+.toast.error3 {
+  background-color: #ff6200;
 }

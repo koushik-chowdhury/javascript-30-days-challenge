@@ -1,10 +1,20 @@
 // collecting elements
-const elements =  JSON.parse(localStorage.getItem("elements")) || [];
+
+// ------------- GLOBAL ---------------
+const elements = JSON.parse(localStorage.getItem("elements")) || [];
+let evenNumber = [];
+let evenIndex = 0;
+let lastProcessedIndex = 0;
 let state = 0;
 
+// ------------- GLOBAL END ---------------
+
+// ----------- LOCAL STORAGE --------------
 function saveToLocalStorage() {
   localStorage.setItem("elements", JSON.stringify(elements));
 }
+
+// ----------- LOCAL STORAGE END --------------
 
 function getElements() {
   const arrayElements = document.getElementById("arrayElements");
@@ -18,7 +28,7 @@ function getElements() {
       arrayElements.value = "";
       arrayElements.focus(); // USEFULL FOR USER EXPERIENCE
     } else {
-      console.log("Enter any element..");
+      showToast("error3");
     }
   }
   pushArray.addEventListener("click", addElement);
@@ -28,9 +38,9 @@ function getElements() {
     }
   });
 }
-getElements();
+getElements(); 
 
-// Display function
+// --------------- DISPLAYING THE ARRAY IN WEB PAGE ------------
 const display = document.getElementById("display");
 const displayArrayShow = document.getElementById("displayArrayShow");
 function displayElements() {
@@ -41,14 +51,14 @@ function displayElements() {
       showToast("error1");
       return;
     }
-    // items.innerHTML = "";
     if (state !== elements.length) {
       displayArrayShow.style.display = "block";
+      // evenDisplay.style.display = "none";
       for (let i = state; i < elements.length; i++) {
         const list = document.createElement("li");
         list.textContent = elements[i];
         items.appendChild(list);
-        console.log("clicked");
+        // console.log("clicked");
       }
       state = elements.length;
     } else {
@@ -57,6 +67,59 @@ function displayElements() {
   }
 }
 displayElements();
+// --------------- DISPLAYING THE ARRAY IN WEB PAGE END ------------
+
+// ---------CALCULATE EVEN NUMBER --------------
+function evenNum() {
+  if (evenIndex !== elements.length) {
+    // console.log("Inside even cal fun");
+    for (let i = evenIndex; i < elements.length; i++) {
+      if (elements[i] % 2 === 0) {
+        evenNumber.push(elements[i]);
+        // console.log(evenNumber);
+      }
+    }
+    evenIndex = elements.length;
+  } else {
+    console.log("No new Elements");
+  }
+}
+// ---------CALCULATE EVEN NUMBER END --------------
+
+// --------- EVEN ARRAY DISPLAY ---------
+const evenArray = document.getElementById("evenArray");
+const evenDisplay = document.getElementById("evenDisplay");
+
+function showEvenArray() {
+  const evenArrayDisplay = document.getElementById("evenArrayDisplay");
+  evenArray.addEventListener("click", function () {
+    evenNum();
+    evArray();
+  });
+
+  function evArray() {
+    if (elements.length === 0) {
+      showToast("error1");
+      return;
+    }
+    if (lastProcessedIndex !== evenNumber.length) {
+      for (let i = lastProcessedIndex; i < evenNumber.length; i++) {
+        evenDisplay.style.display = "block";
+        // displayArrayShow.style.display = "none";
+        const evList = document.createElement("li");
+        evList.textContent = evenNumber[i];
+        evenArrayDisplay.appendChild(evList);
+        // console.log("It should print");
+      }
+      lastProcessedIndex = evenNumber.length;
+    } else {
+      showToast("error2");
+    }
+  }
+}
+showEvenArray();
+// --------- EVEN ARRAY DISPLAY END ---------
+
 
 function showToast(errorType) {
   const toast = document.getElementById("toast");
@@ -68,6 +131,9 @@ function showToast(errorType) {
   } else if (errorType === "error2") {
     toast.textContent = "Updated!";
     toast.className = "toast show error2";
+  } else if (errorType === "error3") {
+    toast.textContent = "You are Trying to insert NULL!";
+    toast.className = "toast show error3";
   }
 
   // Show the toast notification
@@ -75,6 +141,3 @@ function showToast(errorType) {
     toast.className = toast.className.replace("show", "");
   }, 3000); // Hide after 3 seconds
 }
-
-// read about
-// 1. Function and its parameter, type, what is event
