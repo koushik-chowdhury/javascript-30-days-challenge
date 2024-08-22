@@ -176,7 +176,7 @@ transition: 0.2s all;
 
 .displayArray,
 .evenArray {
-  width: 190px; /* Width of the child elements */
+  width: 350px; /* Width of the child elements */
   margin: 20px; /* Margin around the child elements */
   background-color: #011522; /* Background color */
   border-radius: 8px; /* Rounded corners */
@@ -196,6 +196,19 @@ transition: 0.2s all;
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
 }
+/* 
+.items li {
+  display: flex;
+  list-style: none; 
+  justify-content: center;
+  align-items: center;
+  background-color: #282c35;
+  margin: 6px;
+  padding: 10px; 
+  border-radius: 5px; 
+  cursor: pointer;
+  width: 20%; 
+} */
 
 .items li {
   display: flex;
@@ -207,8 +220,36 @@ transition: 0.2s all;
   padding: 10px; /* Padding inside list items */
   border-radius: 5px; /* Rounded corners for list items */
   cursor: pointer;
-  width: 40%; /* Width of list items */
+  width: 20%; /* Width of list items */
+  
+  /* Initial state for animation */
+  opacity: 0;
+  transform: scale(0.8);
+  
+  /* Transition for hover effect */
+  transition: transform 0.2s ease-in-out;
+  
+  /* Trigger the fade-in animation */
+  animation: fadeInScale 0.5s ease forwards;
 }
+
+/* Hover effect */
+.items li:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes for fade-in and scale animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 .items li:hover {
   transform: scale(1.02); /* Slightly enlarge the item on hover */
