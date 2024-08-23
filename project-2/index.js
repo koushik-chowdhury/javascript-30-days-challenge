@@ -38,7 +38,7 @@ function getElements() {
     }
   });
 }
-getElements(); 
+getElements();
 
 // --------------- DISPLAYING THE ARRAY IN WEB PAGE ------------
 const display = document.getElementById("display");
@@ -120,7 +120,16 @@ function showEvenArray() {
 showEvenArray();
 // --------- EVEN ARRAY DISPLAY END ---------
 
+const clearStorage = document.getElementById("clearStorage");
 
+function Reset() {
+  clearStorage.addEventListener("click", function () {
+    console.log("clicked");
+
+    localStorage.clear();
+  });
+}
+Reset();
 function showToast(errorType) {
   const toast = document.getElementById("toast");
 
