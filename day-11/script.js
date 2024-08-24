@@ -6,4 +6,5 @@ const myPromise = new Promise((resolve) => {
   
   myPromise.then((message) => {
     console.log(message);
+    
   });
