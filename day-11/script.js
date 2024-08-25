@@ -6,5 +6,6 @@ const myPromise = new Promise((resolve) => {
   
   myPromise.then((message) => {
     console.log(message);
-    
   });
+
+  // Read about promise and async
