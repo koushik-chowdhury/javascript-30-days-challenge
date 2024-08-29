@@ -1,1 +1,1 @@
-const friendName = ["koushik", "Chowdhury", "Simran", "Prosad"];
+const friendName = ["koushik", "Chowdhury", "Simran"];
